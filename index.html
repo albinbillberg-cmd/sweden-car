@@ -1,42 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#183c2b" />
-  <title>Sweden Car — Ullervad</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main class="game-shell">
-    <header class="topbar">
-      <div><p class="eyebrow">En sommar i Västergötland</p><h1>Sweden Car</h1></div>
-      <button id="resetButton" class="quiet-button" type="button">Börja om</button>
-    </header>
-    <section class="dashboard" aria-label="Spelstatus">
-      <div><span>Plats</span><strong id="location">Ullervad</strong></div>
-      <div><span>Dag och tid</span><strong id="clock">Dag 1 · 08:00</strong></div>
-      <div><span>Pengar</span><strong id="money">3 000 kr</strong></div>
-      <div><span>Resa</span><strong id="vehicle">John Deere-traktor</strong></div>
-    </section>
-    <section class="columns">
-      <div class="main-column">
-        <section class="card scene-card">
-          <p class="eyebrow" id="sceneEyebrow">Ullervad</p>
-          <h2 id="sceneTitle">Garaget väntar</h2>
-          <p id="sceneText"></p>
-          <div class="progress-wrap"><div class="progress-label"><span>Volvo 945</span><strong id="carProgressText"></strong></div><div class="progress-track"><div id="carProgress" class="progress-fill"></div></div></div>
-        </section>
-        <section class="card"><div class="section-heading"><div><p class="eyebrow">Vad vill du göra?</p><h2>Åtgärder</h2></div></div><div id="actions" class="actions"></div></section>
-      </div>
-      <aside class="side-column">
-        <section class="card"><p class="eyebrow">I fickan</p><h2>Förråd</h2><ul id="inventory" class="inventory"></ul></section>
-        <section class="card"><p class="eyebrow">Ditt mål</p><h2>Få 945:an körklar</h2><p class="small-copy">Jobba ihop pengar, köp motordelarna på Mekonomen och bygg klart bilen i garaget. När bilen är redo kan Stig åka till Mariestad och fråga Isabell om en dejt.</p></section>
-        <section class="card log-card"><p class="eyebrow">Dagens händelser</p><h2>Dagbok</h2><div id="log" class="log" aria-live="polite"></div></section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweden Car</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <h1>Sweden Car</h1>
+        <div class="stats">
+          <div><span>Pengar</span><strong id="money">3000 kr</strong></div>
+          <div><span>Dag</span><strong id="day">1</strong></div>
+          <div><span>Tid</span><strong id="time">08:00</strong></div>
+          <div><span>Plats</span><strong id="locationName">Ullervad</strong></div>
+        </div>
+
+        <div class="panel">
+          <h2>Bilstatus</h2>
+          <p id="carStatus">Volvo 945: trasig</p>
+        </div>
+
+        <div class="panel">
+          <h2>Förråd</h2>
+          <ul id="inventoryList"></ul>
+        </div>
       </aside>
-    </section>
-    <footer>Fiktiv spelprototyp · Ullervad ↔ Mariestad · Sol, grusväg och skruvande</footer>
-  </main>
-  <script src="game.js"></script>
-</body>
+
+      <main class="main">
+        <nav id="locations" class="locations"></nav>
+        <section class="actions panel">
+          <h2>Åtgärder</h2>
+          <div id="actions" class="action-list"></div>
+        </section>
+
+        <section class="story panel">
+          <h2>Berättelse</h2>
+          <div id="storyLog" class="story-log"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
 </html>

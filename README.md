@@ -1,24 +1,47 @@
 # Sweden Car
 
-En liten svensk webbläsarprototyp om Stig, en sommar i Ullervad och en Volvo 945 som behöver byggas klart.
+Detta är en liten spelprototyp byggd som en enkel webbsida i HTML, CSS och JavaScript.
 
-## Spela
+## Spelets grund
 
-Öppna `index.html` i en modern webbläsare. Ingen installation behövs.
+- Spelaren styr Stig.
+- Du bor i Ullervad och arbetar för att bygga en Volvo 945.
+- Du tjänar pengar genom att:
+  - leverera ved
+  - bärga bilar
+  - laga bilar
+- Du reser med John Deere-traktorn till Mariestad.
+- I Mariestad köper du delar på Mekonomen, mat på Coop och bensin på OKQ8.
+- Målet är att få bilen körklar, hitta Isabell och få en chans att gå på dejt.
+- Klubbentrén kräver 10 000 kr i muta till vakten.
 
-## Så fungerar prototypen
+## Starta spelet
 
-- Börja med 3 000 kr och tjäna pengar genom att leverera ved, bärga bilar och laga kundbilar.
-- Ta John Deere-traktorn till Mariestad för att handla.
-- Köp tändstift (100 kr), motorolja (200 kr), kylvätska (500 kr) och rem (50 kr) på Mekonomen.
-- Köp bensin på OKQ8. Coop säljer mat och dryck.
-- Montera motordelarna i Ullervad. När motorn är byggd och bilen har bensin kan Stig köra sin 945:a till Mariestad.
-- Fråga Isabell om en dejt — hon väljer själv om hon tackar ja.
-- Hitta fälgar i den övergivna ladugården. Spöket visar sig efter mörkrets inbrott.
-- Klubbens fiktiva entréutmaning kostar 10 000 kr.
+Öppna `index.html` i en webbläsare.
 
-## Filer
+## Struktur
 
-- `index.html` — spelgränssnitt
-- `style.css` — utseende och mobilanpassning
-- `game.js` — spelstatus, ekonomi, resor och uppdrag
+- `index.html` – sidan och UI
+- `style.css` – styling
+- `game.js` – spelmekanik
+
+## Snabb fakta
+
+- Startpengar: 3000 kr
+- Tändstift: 100 kr
+- Motorolja: 200 kr
+- Kylvätska: 500 kr
+- Rem: 50 kr
+- Bensin: 300 kr
+
+## Nästa steg
+
+Du kan fortsätta bygga spelet med:
+
+- fler platser och NPC:er
+- tid/energi-system
+- inventarieflikar och drop-system
+- försäljnings- och keltermekanik
+- riktig karta
+- musik och ljudeffekter
+- bättre “car build” loop
