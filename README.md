@@ -1,47 +1,28 @@
 # Sweden Car
 
-Detta är en liten spelprototyp byggd som en enkel webbsida i HTML, CSS och JavaScript.
+En liten, egen top-down 2D-webbprototyp om Stig, en sommar i Ullervad och en Volvo 945 som behöver byggas klart.
 
-## Spelets grund
+## Spela
 
-- Spelaren styr Stig.
-- Du bor i Ullervad och arbetar för att bygga en Volvo 945.
-- Du tjänar pengar genom att:
-  - leverera ved
-  - bärga bilar
-  - laga bilar
-- Du reser med John Deere-traktorn till Mariestad.
-- I Mariestad köper du delar på Mekonomen, mat på Coop och bensin på OKQ8.
-- Målet är att få bilen körklar, hitta Isabell och få en chans att gå på dejt.
-- Klubbentrén kräver 10 000 kr i muta till vakten.
+Öppna `index.html` i en modern webbläsare. Ingen installation behövs.
 
-## Starta spelet
+## Kontroller
 
-Öppna `index.html` i en webbläsare.
+- **WASD** eller **piltangenter**: gå runt i världen
+- **Shift**: spring
+- **E**: interagera med det som är nära
+- På pekskärm: använd pilarna och knappen **E · Använd**
 
-## Struktur
+Gå fram till saker för att se en interaktionsmarkering. Utforska Ullervad, prata med platser och föremål, gör jobb, köp delar och bygg bilen. Traktorn tar Stig mellan Ullervad och Mariestad.
 
-- `index.html` – sidan och UI
-- `style.css` – styling
-- `game.js` – spelmekanik
+## I prototypen
 
-## Snabb fakta
+- Utforskningsbar 2D-värld med kamera som följer Stig och hinder att gå runt
+- Ullervad och Mariestad med butiker och interaktionspunkter
+- John Deere-traktor, Volvo 945, vedjobb, bärgning och bilreparation
+- Mekonomen: tändstift (100 kr), motorolja (200 kr), kylvätska (500 kr), rem (50 kr)
+- OKQ8: bensin; Coop: mat och dryck
+- Ladugård med fälgar och ett spöke på natten
+- Pub, Isabell och klubbens 10 000 kr-entréutmaning
 
-- Startpengar: 3000 kr
-- Tändstift: 100 kr
-- Motorolja: 200 kr
-- Kylvätska: 500 kr
-- Rem: 50 kr
-- Bensin: 300 kr
-
-## Nästa steg
-
-Du kan fortsätta bygga spelet med:
-
-- fler platser och NPC:er
-- tid/energi-system
-- inventarieflikar och drop-system
-- försäljnings- och keltermekanik
-- riktig karta
-- musik och ljudeffekter
-- bättre “car build” loop
+Detta är en enkel 2D-prototyp, inte ett fullskaligt 3D-spel. All grafik är ritad direkt i JavaScript och inga externa tillgångar behövs.
