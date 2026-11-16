@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#183b27" />
-  <title>Sweden Car — Ullervad</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <main class="game-layout">
-    <header class="topbar">
-      <div><p class="eyebrow">En sommar i Västergötland</p><h1>Sweden Car</h1></div>
-      <div class="stats" aria-label="Spelstatus">
-        <span>📍 <b id="locationName">Ullervad</b></span>
-        <span>☀️ <b id="clock">Dag 1 · 08:00</b></span>
-        <span>💰 <b id="money">3 000 kr</b></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweden Car 3D</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hud-top">
+      <div class="brand-area">
+        <p class="eyebrow">Sommar i Västergötland</p>
+        <h1>Sweden Car 3D</h1>
       </div>
-    </header>
-    <section class="game-frame" aria-label="Spelvärld">
-      <canvas id="game" width="960" height="600" aria-label="Gå runt i spelvärlden med WASD eller piltangenter"></canvas>
-      <div class="help"><kbd>W A S D</kbd> / <kbd>↑ ← ↓ →</kbd> gå <span>·</span> <kbd>E</kbd> interagera <span>·</span> <kbd>Shift</kbd> spring</div>
-      <div id="prompt" class="prompt" aria-live="polite">Utforska gården. Gå fram till något och tryck E.</div>
+      <div class="stats">
+        <span>📍 <strong id="locationName">Ullervad</strong></span>
+        <span>🕒 <strong id="clock">Dag 1 · 08:00</strong></span>
+        <span>💰 <strong id="money">3000 kr</strong></span>
+      </div>
+    </div>
+
+    <main class="game-shell">
+      <canvas id="gameCanvas"></canvas>
+
       <div id="message" class="message" aria-live="polite"></div>
-      <div class="touch-controls" aria-label="Pekkontroller">
-        <button data-dir="up" aria-label="Gå upp">▲</button><button data-dir="left" aria-label="Gå vänster">◀</button><button data-dir="down" aria-label="Gå ner">▼</button><button data-dir="right" aria-label="Gå höger">▶</button><button id="touchInteract" class="touch-interact">E · Använd</button>
+      <div id="prompt" class="prompt" aria-live="polite">Gå runt i världen och tryck E.</div>
+
+      <div class="bottom-panel">
+        <div>
+          <p class="eyebrow">Volvo 945</p>
+          <strong id="carStatus">Motorn väntar på delar</strong>
+        </div>
+        <div>
+          <p class="eyebrow">Förråd</p>
+          <strong id="inventory">Tomt</strong>
+        </div>
+        <button id="resetButton" type="button">Börja om</button>
       </div>
-    </section>
-    <section class="bottom-bar">
-      <div><span class="eyebrow">Volvo 945</span><strong id="carStatus">Motorn väntar på delar</strong></div>
-      <div><span class="eyebrow">Förråd</span><strong id="inventory">Tomt</strong></div>
-      <button id="resetButton" class="reset">Börja om</button>
-    </section>
-    <footer>En egen liten 2D-äventyrsprototyp · Gå runt, utforska och fixa bilen</footer>
-  </main>
-  <script src="game.js"></script>
-</body>
+    </main>
+
+    <script type="module" src="game.js"></script>
+  </body>
 </html>
