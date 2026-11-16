@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sweden Car 3D</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="hud-top">
-      <div class="brand-area">
-        <p class="eyebrow">Sommar i Västergötland</p>
-        <h1>Sweden Car 3D</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#24442c" />
+  <title>Sweden Car — Ullervad</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="gameShell" class="game-shell">
+    <canvas id="gameCanvas" aria-label="3D-spelvärld"></canvas>
+
+    <section id="startScreen" class="screen" aria-labelledby="gameTitle">
+      <div class="start-card">
+        <p class="eyebrow">En sommar i Västergötland</p>
+        <h1 id="gameTitle">Sweden Car</h1>
+        <p class="intro">Stig har en Volvo 945 att bygga, jobb att göra och en resa till Mariestad framför sig. Innan äventyret börjar måste du ta körkort.</p>
+        <div class="start-facts"><span>📍 Ullervad</span><span>🚗 Volvo 945</span><span>💰 3 000 kr</span></div>
+        <button id="licenseButton" class="primary-button" type="button">Ta körkort</button>
+        <p class="fine-print">Körkortstestet har tre trafikfrågor. Du behöver klara alla för att starta spelet.</p>
       </div>
-      <div class="stats">
-        <span>📍 <strong id="locationName">Ullervad</strong></span>
-        <span>🕒 <strong id="clock">Dag 1 · 08:00</strong></span>
-        <span>💰 <strong id="money">3000 kr</strong></span>
+    </section>
+
+    <section id="licenseScreen" class="screen hidden" aria-labelledby="licenseTitle">
+      <div class="test-card">
+        <p class="eyebrow">Trafikskolan</p>
+        <h2 id="licenseTitle">Körkortstest</h2>
+        <div class="test-progress"><span id="questionCounter">Fråga 1 av 3</span><span id="scoreCounter">Rätt: 0</span></div>
+        <h3 id="questionText"></h3>
+        <div id="answers" class="answers"></div>
+        <p id="testFeedback" class="test-feedback" aria-live="polite"></p>
+        <button id="nextQuestion" class="primary-button hidden" type="button">Nästa fråga</button>
+        <button id="retryTest" class="primary-button hidden" type="button">Försök igen</button>
+        <button id="startGameButton" class="primary-button hidden" type="button">Börja spelet</button>
       </div>
-    </div>
+    </section>
 
-    <main class="game-shell">
-      <canvas id="gameCanvas"></canvas>
-
-      <div id="message" class="message" aria-live="polite"></div>
-      <div id="prompt" class="prompt" aria-live="polite">Gå runt i världen och tryck E.</div>
-
-      <div class="bottom-panel">
-        <div>
-          <p class="eyebrow">Volvo 945</p>
-          <strong id="carStatus">Motorn väntar på delar</strong>
-        </div>
-        <div>
-          <p class="eyebrow">Förråd</p>
-          <strong id="inventory">Tomt</strong>
-        </div>
-        <button id="resetButton" type="button">Börja om</button>
+    <section id="hud" class="hud hidden" aria-label="Spelstatus">
+      <div class="hud-top"><div class="brand"><span class="eyebrow">Ullervad, sommaren</span><strong>Sweden Car</strong></div>
+        <div class="stats"><span>📍 <b id="locationName">Ullervad</b></span><span>🕒 <b id="clock">Dag 1 · 08:00</b></span><span>💰 <b id="money">3 000 kr</b></span><span>🪪 <b id="licenseStatus">Körkort</b></span></div>
       </div>
-    </main>
-
-    <script type="module" src="game.js"></script>
-  </body>
+      <div id="toast" class="toast" aria-live="polite"></div>
+      <div class="bottom-hud"><div><small>VOLVO 945</small><strong id="carStatus">Motorn väntar på delar</strong></div><div><small>FÖRRÅD</small><strong id="inventory">Tomt</strong></div><p class="controls"><kbd>WASD</kbd> gå/kör · <kbd>Shift</kbd> spring · <kbd>E</kbd> använd</p></div>
+    </section>
+    <div id="interactionPrompt" class="interaction-prompt hidden"></div>
+    <div class="touch-controls hidden" aria-label="Pekkontroller"><button data-key="w">▲</button><button data-key="a">◀</button><button data-key="s">▼</button><button data-key="d">▶</button><button id="touchUse">E · Använd</button></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
 </html>
